@@ -1,0 +1,1334 @@
+@if (Model.Biblioteca)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-biblioteca" class="panel-title" id="accordion-menu-biblioteca">
+                @Language.Biblioteca
+                <span class="fa fa-book pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-biblioteca" class="panel-collapse collapse @(setor == "biblioteca" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+                    @if (Model.BibliotecaAvisoEArquivo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("Biblioteca", "AvisosEArquivos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.BibliotecaConsultaAoAcervo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="http://sofia.fei.edu.br/pergamum/biblioteca/index.php" target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ConsultaAoAcervo
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ConsultaAoAcervo
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.BibliotecaEbscoEBook)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="https://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=ns015354&groupid=main&profile=ebooks&user=ns015354&password=Estudo2020Fei&#64" target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EBSCOEBooks
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EBSCOEBooks
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.BibliotecaEbscoBaseDado)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="https://search.ebscohost.com/login.aspx?authtype=ip,uid&custid=ns015354&groupid=main&profile=ehost&user=ns015354&password=Estudo2020Fei&#64 " target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EBSCOBaseDados
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EBSCOBaseDados
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.BibliotecaNormaEProcedimento)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("Biblioteca", "NormasEprocedimentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+
+
+
+                    @if (Model.BibliotecaTrabalhoAcademico)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="https://portal.fei.edu.br/biblioteca/#trabalho" target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.TrabalhosAcademicos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.TrabalhosAcademicos
+                            </a>
+                        </li>
+                    }
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Biblioteca
+                <span class="fa fa-book pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+
+@if (Model.Bolsa)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-bolsas" class="panel-title" id="accordion-menu-bolsas">
+                @Language.Bolsas
+                <span class="glyphicon glyphicon-gift pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-bolsas" class="panel-collapse collapse @(setor == "bolsas" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+                    @if (Model.BolsaAvisoEArquivo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("Bolsas", "AvisosEArquivos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Bolsas
+                <span class="fa fa-book pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Cgi)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-cgi" class="panel-title">
+                @Language.Cgi
+                <span class="fa fa-laptop pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-cgi" class="panel-collapse collapse @(setor == "cgi" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.CgiAtualizacaoDeSenha)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("atualizarSenha", "contas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AtualizacaoDeSenha
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AtualizacaoDeSenha
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.CgiEmailFei)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "emailsFeis")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EmailFei
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EmailFei
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.CgiNormaEProcedimento)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("cgi", "normasEProcedimentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Cgi
+                <span class="fa fa-laptop pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Cpa)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-cpa" class="panel-title">
+                @Language.Cpa
+                <span class="fa fa-bar-chart pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-cpa" class="panel-collapse collapse @(setor == "cpa" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.CpaAvalieSeuCurso)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("avaliacao", "Cpas")" target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvalieSeuCurso
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvalieSeuCurso
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.CpaOQueE)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "cpas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.OQueE
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.OQueE
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.CpaResultado)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("resultados", "cpas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Resultados
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Resultados
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Cpa
+                <span class="fa fa-bar-chart pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.EstagioEEmprego)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-estagios-e-empregos" class="panel-title">
+                <span class="menu-lateral-limitar-titulo">@Language.EstagiosEEmpregos</span>
+                <span class="glyphicon glyphicon-briefcase pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-estagios-e-empregos" class="panel-collapse collapse @(setor == "estagiosEEmpregos" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.EstagioEEmpregoNormaEProcedimento)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("estagiosEEmpregos", "normasEProcedimentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.EstagioEEmpregoVaga)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "vagas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Vagas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Vagas
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                <span class="menu-lateral-limitar-titulo">@Language.EstagiosEEmpregos</span>
+                <span class="glyphicon glyphicon-briefcase pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Evento)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-eventos" class="panel-title">
+                @Language.Eventos
+                <span class="glyphicon glyphicon-calendar pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-eventos" class="panel-collapse collapse @(setor == "eventos" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.EventoAvisoEArquivo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("eventos", "avisosEArquivos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.EventoCertificado)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "certificados")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Certificados
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Certificados
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Eventos
+                <span class="glyphicon glyphicon-calendar pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.IniciacaoCientifica)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-iniciacao-cientifica" class="panel-title">
+                @Language.IniciacaoCientifica
+                <span class="fa fa-flask pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-iniciacao-cientifica" class="panel-collapse collapse @(setor == "iniciacaoCientifica" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.IniciacaoCientificaVaga)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "iniciacoesCientificas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Vagas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Vagas
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.IniciacaoCientifica
+                <span class="fa fa-flask pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Projeto)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-projetos" class="panel-title">
+                Projetos
+                <span class="fa fa-registered pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-projetos" class="panel-collapse collapse @(setor == "projetosAcademicos" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.Projeto)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "projetosAcademicos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                Projetos Acadêmicos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                Projetos Acadêmicos
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                Projetos
+                <span class="fa fa-registered pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Rh)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-rh" class="panel-title">
+                @Language.Rh
+                <span class="fa fa-random pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-rh" class="panel-collapse collapse @(setor == "rh" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.RhMonitoria)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "FolhasDePagamentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Monitor
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Monitor
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Rh
+                <span class="fa fa-random pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.SalaDoProfessor)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-sala-dos-professores" class="panel-title">
+                <span class="menu-lateral-limitar-titulo">@Language.SalaDosProfessores</span>
+                <span class="fa fa-group pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-sala-dos-professores" class="panel-collapse collapse @(setor == "salaDosProfessores" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @*if (Model.SalaDoProfessorAulaPresencial)
+                {
+                    <li @if (controller.Equals("arquivos")) { @ativo }>
+                        <a href="@Url.Action("Index", "AulasPresenciais")">
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.AulasPresenciais
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="desabilitado">
+                        <a>
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.AulasPresenciais
+                        </a>
+                    </li>
+                }*@
+
+                    @if (Model.SalaDoProfessorAtividadeComplementar)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "atividadesComplementares")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AtividadesComplementares
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AtividadesComplementares
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorAvisoEArquivo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("salaDosProfessores", "avisosEArquivos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorMonitoria)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "monitorias")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Monitoria
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Monitoria
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorPai)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "pais")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Pai
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Pai
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorPresenca)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("Cadastrar", "Presencas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Presenca
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Presenca
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorProfessor)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "professores")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Professor
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Professor
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorProva)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "provas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Provas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Provas
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SalaDoProfessorTabelaDeAula)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "tabelasDeAulas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.TabelaDeAulas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.TabelaDeAulas
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                <span class="menu-lateral-limitar-titulo">@Language.SalaDosProfessores</span>
+                <span class="fa fa-group pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Secretaria)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-secretaria" class="panel-title">
+                @Language.Secretaria
+                <span class="fa fa-tty pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-secretaria" class="panel-collapse collapse @(setor == "secretaria" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+
+                    @*if (Model.SecretariaAvaliacaoSemanal)
+                {
+                    <li @if (controller.Equals("avaliacoesSemanais"))
+                        { @ativo }>
+                        <a href="@Url.Action("index", "avaliacoesSemanais")">
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.AvaliacaoSemanal
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="desabilitado">
+                        <a>
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.AvaliacaoSemanal
+                        </a>
+                    </li>
+                }*@
+
+                    @if (Model.SecretariaAvisoEArquivo)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("secretaria", "avisosEArquivos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.AvisosEArquivos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaCalendarioEscolar)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "calendariosEscolares")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.CalendarioEscolar
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.CalendarioEscolar
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaCarteirinha)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "carteirinhas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Carteirinhas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Carteirinhas
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaContratoEPortaria)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("secretaria", "contratosEPortarias")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ContratosEPortarias
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ContratosEPortarias
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaDadoPessoal)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "dadosPessoais")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.DadosPessoais
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.DadosPessoais
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaDisciplinaEletiva)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "disciplinasEletivas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.DisciplinaEletiva
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.DisciplinaEletiva
+                            </a>
+                        </li>
+                    }
+
+                    @*@if (Model.SecretariaDisciplinaEletiva2)
+                {
+                    <li @if (controller.Equals("arquivos")) { @ativo }>
+                        <a href="@Url.Action("index", "disciplinasEletivas2")">
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.DisciplinaEletiva
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li @if (controller.Equals("arquivos")) { @ativo }>
+                        <a href="@Url.Action("index", "disciplinasEletivas2")">
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @ Language.DisciplinaEletiva
+                        </a>
+                    </li>
+                    <li class="desabilitado">
+                        <a>
+                            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                            @Language.DisciplinaEletiva
+                        </a>
+                    </li>
+                }*@
+
+                    @if (Model.SecretariaEscolhaDeAreaEEnfase)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "escolhasDeAreasEEnfases")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EscolhaDeAreaEEnfase
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.EscolhaDeAreaEEnfase
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaFalta)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "faltas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Faltas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Faltas
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaHorario)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "horarios")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Horario
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Horario
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaMatriculaOnline)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="https://interage.fei.org.br/secureserver/mol" target="_blank">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.MatriculaOnline
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.MatriculaOnline
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaMudancaDeHorario)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "mudancasDeHorarios")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.MudancaDeHorario
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.MudancaDeHorario
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaNormaEProcedimento)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("secretaria", "normasEProcedimentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.NormasEProcedimentos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaNota)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "notas")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Notas
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Notas
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaPasseEscolar)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "passesEscolares")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.PasseEscolar
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.PasseEscolar
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaPlanoDeEnsino)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "planosDeEnsinos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.PlanosDeEnsino
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.PlanosDeEnsino
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.SecretariaSolicitacaoDeDocumento)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "solicitacoesDeDocumentos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.SolicitacaoDeDocumentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.SolicitacaoDeDocumentos
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Secretaria
+                <span class="fa fa-tty pull-right"></span>
+            </a>
+        </div>
+    </div>
+}
+
+@if (Model.Tesouraria)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion" href="#menu-tesouraria" class="panel-title">
+                @Language.Tesouraria
+                <span class="fa fa-university pull-right"></span>
+            </a>
+        </div>
+        <div id="menu-tesouraria" class="panel-collapse collapse @(setor == "tesouraria" ? "in" : string.Empty) ">
+            <div class="panel-body">
+                <!--itens do menu -->
+                <ul class="nav nav-list">
+
+                    @if (Model.TesourariaAgendaFies)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "agendasFies")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Agendamentos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Agendamentos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.TesourariaBoleto)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "boletos")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Boletos
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.Boletos
+                            </a>
+                        </li>
+                    }
+
+                    @if (Model.TesourariaResponsavelFinanceiro)
+                    {
+                        <li @if (controller.Equals("arquivos")) { @ativo }>
+                            <a href="@Url.Action("index", "responsaveisfinanceiros")">
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ResponsavelFinanceiro
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+
+                        <li class="desabilitado">
+                            <a>
+                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                @Language.ResponsavelFinanceiro
+                            </a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel panel-default desabilitado">
+        <div class="panel-heading">
+            <a class="panel-title">
+                @Language.Tesouraria
+                <span class="fa fa-university pull-right"></span>
+            </a>
+        </div>
+    </div>
+}

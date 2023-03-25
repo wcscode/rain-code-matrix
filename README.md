@@ -1,3 +1,3 @@
 ﻿#rain-code-matrix
  
- <img src="./preview,png" alt="Alt text" title="Matrix Rain">
+ <img src="preview,png" alt="Alt text" title="Matrix Rain">
